@@ -1,320 +1,257 @@
-<!doctype html>
-<html lang="fa">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sorvli Info</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body,
-    html {
-      height: 100%;
-      overflow: hidden;
-      font-family:
-        system-ui,
-        -apple-system,
-        Segoe UI,
-        Roboto,
-        sans-serif;
-      background: radial-gradient(circle at top,
-          #0b1220,
-          #05060a 60%,
-          #02030a);
-      color: #e5e7eb;
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 0;
-    }
-
-    #overlay {
-      position: relative;
-      z-index: 2;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 20px;
-      gap: 20px;
-    }
-
-    .card {
-      background: rgba(26, 2, 68, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 40px 30px;
-      border-radius: 22px;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
-      max-width: 600px;
-      animation: float 6s ease-in-out infinite;
-    }
-
-    h1 {
-      font-family: "Vazirmatn", sans-serif;
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-      background: #e5e7eb;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p {
-      font-size: 1.1rem;
-      opacity: 0.85;
-      line-height: 2;
-    }
-
-    .socials {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .socials a {
-      width: 46px;
-      height: 46px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      transition: 0.3s;
-      color: white;
-    }
-
-    .socials a:hover {
-      transform: translateY(-4px);
-      background: rgba(255, 255, 255, 0.12);
-    }
-
-    .socials svg {
-      width: 22px;
-      height: 22px;
-      fill: #e5e7eb;
-    }
-
-    @keyframes float {
-
-      0%,
-      100% {
-        transform: translateY(0px);
-      }
-
-      50% {
-        transform: translateY(-10px);
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sora | Developer & Creator</title>
+  <meta name="description" content="Personal website of Sora — coding projects, skills, and personal information.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <div id="overlay">
-    <div class="card">
-      <h1> Hi, I'm Ali.</h1>
-       <p>
-A web developer passionate about programming and the world of technology.<br>
-I love designing and building modern, minimal, and functional websites, turning ideas into engaging digital experiences.<br><br>
-<strong>Turning ideas into code.</strong><br><br>
-For project inquiries and collaborations, feel free to contact me on <b>Telegram.</b><br><br>
-<code>Let's build something great.</code>
-        </p>
-      </p>
-      <div class="socials">
-        <a href="https://t.me/sorvlix" target="_blank" title="Telegram"><svg viewBox="0 0 24 24">
-            <path
-              d="M9.99 15.67L9.6 21.3c.57 0 .81-.24 1.11-.54l2.66-2.55 5.52 4.04c1.01.56 1.73.27 1.98-.94l3.62-16.96c.32-1.5-.54-2.09-1.53-1.71L1.18 9.88c-1.46.57-1.44 1.39-.25 1.76l5.81 1.81L19.2 6.62c.65-.4 1.24-.18.76.22">
-            </path>
-          </svg></a>
 
-        <a href="#" target="_blank" title="GitHub"><svg viewBox="0 0 24 24">
-            <path
-              d="M12 .5C5.73.5.75 5.6.75 11.97c0 5.1 3.29 9.43 7.86 10.96.58.11.79-.26.79-.58v-2.02c-3.2.7-3.88-1.4-3.88-1.4-.52-1.36-1.28-1.72-1.28-1.72-1.05-.74.08-.72.08-.72 1.16.08 1.77 1.22 1.77 1.22 1.03 1.8 2.7 1.28 3.36.98.1-.76.4-1.28.72-1.58-2.56-.3-5.26-1.31-5.26-5.83 0-1.29.46-2.34 1.22-3.17-.12-.3-.53-1.52.11-3.17 0 0 1-.33 3.3 1.21.96-.27 1.98-.41 3-.41s2.04.14 3 .41c2.3-1.54 3.3-1.21 3.3-1.21.64 1.65.23 2.87.11 3.17.76.83 1.22 1.88 1.22 3.17 0 4.53-2.7 5.53-5.27 5.82.41.36.77 1.09.77 2.21v3.28c0 .32.21.69.8.57A11.5 11.5 0 0 0 23.25 11.97C23.25 5.6 18.27.5 12 .5z">
-            </path>
-          </svg></a>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">S<span>ora</span>.</a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        <a href="https://instagram.com/sorvli" target="_blank" title="Instagram"><svg viewBox="0 0 24 24">
-            <path
-              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm6.5-1.5a1 1 0 1 0 1 1 1 1 0 0 0-1-1z">
-            </path>
-          </svg></a>
-
-        <a href="#" target="_blank" title="X"><svg viewBox="0 0 24 24">
-            <path
-              d="M18.9 2h3.1l-6.8 7.8L23 22h-6.6l-5.2-6.8L5.2 22H2l7.3-8.4L1 2h6.7l4.7 6.2L18.9 2zm-1.2 18h1.8L6.1 3.9H4.2L17.7 20z">
-            </path>
-          </svg></a>
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-kicker">Hello, I'm</p>
+      <h1 class="hero-title">Sora <span class="highlight">Developer</span></h1>
+      <p class="hero-subtitle">I build things with code and share what I learn along the way.</p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
       </div>
     </div>
-  </div>
+    <div class="hero-visual">
+      <div id="hero-canvas"></div>
+      <div class="code-card">
+        <div class="code-header">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+        </div>
+        <pre class="code-block"><code>&lt;span class="name"&gt;Sora&lt;/span&gt;
+&lt;span class="role"&gt;Developer</span&gt;
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script>
-  const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x05060a, 0.012);
+{ "interests": ["web", "software", "learning"] }</code></pre>
+      </div>
+    </div>
+  </header>
 
-  const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 300);
-  camera.position.z = 60;
+  <!-- About (Personal Information) -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-desc">A little about who I am and what drives me.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Hi, I'm Sora — a developer passionate about writing clean code, solving real problems, and continuously
+            learning new technologies.</p>
+          <p>When I'm not coding, you'll find me exploring new tools, tinkering with side projects, or reading about
+            software design and architecture.</p>
+        </div>
+        <div class="about-facts">
+          <h3 class="facts-title">Quick Facts</h3>
+          <div class="fact-list">
+            <div class="fact-item">
+              <span class="fact-label">Location</span>
+              <span class="fact-value">IR-Tehran</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Role</span>
+              <span class="fact-value">Developer / Designer</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Focus</span>
+              <span class="fact-value">Web development & software</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-label">Goal</span>
+              <span class="fact-value">Build useful things, share knowledge</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  document.body.appendChild(renderer.domElement);
+  <!-- Skills (Coding Information) -->
+  <section class="section bg-alt" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-desc">Tools and languages I work with.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Languages</h3>
+          <ul class="skill-list">
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>HTML & CSS</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Web & Frontend</h3>
+          <ul class="skill-list">
+            <li>Wordpress</li>
+            <li>Responsive Design</li>
+            <li>CSS Grid & Flexbox</li>
+            <li>Git & Version Control</li>
+            <li>REST APIs</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Tools & Platforms</h3>
+          <ul class="skill-list">
+            <li>VS Code</li>
+            <li>GitHub</li>
+            <li>Node.js</li>
+          </ul>
+        </div>
+        <div class="skill-category">
+          <h3 class="skill-cat-title">Currently Learning</h3>
+          <ul class="skill-list">
+            <li>System Design</li>
+            <li>Performance Optimization</li>
+            <li>SEO</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  const symbols = ['{ }', '</>', '=>', '01', '( )', '[ ]', ';', '&&', '#', '//', 'fn()', '$_', '<?>', '!=', '++'];
-  const colors = ['#4cc9f0', '#7b2ff7', '#00ff9c', '#f72585', '#4361ee'];
+  <!-- Projects -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Projects</h2>
+        <p class="section-desc">Some of the things I've built.</p>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <img class="project-imageplace" src="images/pr1.jpeg" alt="Kabir Panel">
+            <!-- <div class="placeholder">Project Preview</div> -->
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Kabir Panel</h3>
+            <p class="project-desc">A responsive website information about sandwichpanel — built with Wordpress &
+              Elementor.</p>
+            <div class="project-tags">
+              <span class="tag">WORDPRESS</span>
+              <span class="tag">ELEMENTOR</span>
+              <span class="tag">RM SEO</span>
+            </div>
+            <a href="https://kabirpanel.org" class="project-link">View Project <span>→</span></a>
+          </div>
+        </article>
 
-  function makeSprite(text, color) {
-    const c = document.createElement('canvas');
-    c.width = c.height = 256;
-    const ctx = c.getContext('2d');
-    ctx.font = 'bold 90px monospace';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.shadowColor = color;
-    ctx.shadowBlur = 25;
-    ctx.fillStyle = color;
-    ctx.fillText(text, 128, 128);
-    const mat = new THREE.SpriteMaterial({
-      map: new THREE.CanvasTexture(c),
-      transparent: true,
-      opacity: 0.15 + Math.random() * 0.45,
-      depthWrite: false,
-      blending: THREE.AdditiveBlending
-    });
-    return new THREE.Sprite(mat);
-  }
+        <article class="project-card">
+          <div class="project-image">
+            <img class="project-imageplace" src="images/pr2.png" alt="Phoenix">
+          </div>
+          <div class="project-content">
+            <h3 class="project-title">Phoenix Server</h3>
+            <p class="project-desc">A responsive website for selling dns server's — built with HTML, CSS, and
+              JavaScript.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">php</span>
+              <span class="tag">api</span>
+            </div>
+            <a href="https://dawn-truth-3417.realharuk.workers.dev/" class="project-link">View Project
+              <span>→</span></a>
+          </div>
+        </article>
 
-  const floaters = [];
-  for (let i = 0; i < 70; i++) {
-    const s = makeSprite(
-      symbols[Math.floor(Math.random() * symbols.length)],
-      colors[Math.floor(Math.random() * colors.length)]
-    );
-    s.position.set((Math.random() - 0.5) * 160, (Math.random() - 0.5) * 100, (Math.random() - 0.5) * 100 - 10);
-    const size = 4 + Math.random() * 6;
-    s.scale.set(size, size, 1);
-    s.userData.speed = 0.02 + Math.random() * 0.05;
-    s.userData.phase = Math.random() * Math.PI * 2;
-    scene.add(s);
-    floaters.push(s);
-  }
 
-  /* ---------- شبکه‌ی نودها ---------- */
-  const N = 110, LIMIT = { x: 70, y: 40, z: 40 }, LINK_DIST = 20;
-  const pos = new Float32Array(N * 3);
-  const vel = [];
-  for (let i = 0; i < N; i++) {
-    pos[i * 3] = (Math.random() - 0.5) * LIMIT.x * 2;
-    pos[i * 3 + 1] = (Math.random() - 0.5) * LIMIT.y * 2;
-    pos[i * 3 + 2] = (Math.random() - 0.5) * LIMIT.z * 2;
-    vel.push(new THREE.Vector3(
-      (Math.random() - 0.5) * 0.06,
-      (Math.random() - 0.5) * 0.06,
-      (Math.random() - 0.5) * 0.06
-    ));
-  }
+      </div>
+    </div>
+  </section>
 
-  const pointsGeo = new THREE.BufferGeometry();
-  pointsGeo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  const points = new THREE.Points(pointsGeo, new THREE.PointsMaterial({
-    color: 0x4cc9f0, size: 0.9, transparent: true, opacity: 0.9,
-    blending: THREE.AdditiveBlending, depthWrite: false
-  }));
+  <!-- Contact -->
+  <section class="section bg-alt" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="section-desc">Have a question or just want to say hi?</p>
+      </div>
+      <div class="contact-content">
+        <form class="contact-form" id="contactForm">
 
-  const maxSeg = N * (N - 1) / 2;
-  const linePos = new Float32Array(maxSeg * 6);
-  const lineGeo = new THREE.BufferGeometry();
-  lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
-  const lines = new THREE.LineSegments(lineGeo, new THREE.LineBasicMaterial({
-    color: 0x7b2ff7, transparent: true, opacity: 0.35,
-    blending: THREE.AdditiveBlending, depthWrite: false
-  }));
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          </div>
 
-  const network = new THREE.Group();
-  network.add(points);
-  network.add(lines);
-  scene.add(network);
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="What would you like to talk about?"
+              required></textarea>
+          </div>
 
-  /* ---------- ماوس ---------- */
-  let mouseX = 0, mouseY = 0;
-  document.addEventListener('mousemove', (e) => {
-    mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-    mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-  });
+          <button type="submit" class="btn btn-primary btn-full">
+            Send Message
+          </button>
 
-  /* ---------- انیمیشن ---------- */
-  const clock = new THREE.Clock();
+        </form>
+        <div class="contact-info">
+          <h3 class="info-title">Ways to reach me</h3>
+          <ul class="info-list">
+            <li><strong>Email:</strong>sorvli@gmail.com</li>
+            <li><strong>GitHub:</strong>github.com/sorvli</li>
+            <li><strong>Telegram:</strong>t.me/sorvli</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  function animate() {
-    requestAnimationFrame(animate);
-    const t = clock.getElapsedTime();
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-text">&copy; <span id="year">2026</span> Sora Personal Website.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
 
-    for (let i = 0; i < N; i++) {
-      pos[i * 3] += vel[i].x;
-      pos[i * 3 + 1] += vel[i].y;
-      pos[i * 3 + 2] += vel[i].z;
-      if (Math.abs(pos[i * 3]) > LIMIT.x) vel[i].x *= -1;
-      if (Math.abs(pos[i * 3 + 1]) > LIMIT.y) vel[i].y *= -1;
-      if (Math.abs(pos[i * 3 + 2]) > LIMIT.z) vel[i].z *= -1;
-    }
-    pointsGeo.attributes.position.needsUpdate = true;
-
-    let k = 0;
-    for (let i = 0; i < N; i++) {
-      for (let j = i + 1; j < N; j++) {
-        const dx = pos[i * 3] - pos[j * 3];
-        const dy = pos[i * 3 + 1] - pos[j * 3 + 1];
-        const dz = pos[i * 3 + 2] - pos[j * 3 + 2];
-        if (dx * dx + dy * dy + dz * dz < LINK_DIST * LINK_DIST) {
-          linePos[k++] = pos[i * 3];
-          linePos[k++] = pos[i * 3 + 1];
-          linePos[k++] = pos[i * 3 + 2];
-          linePos[k++] = pos[j * 3];
-          linePos[k++] = pos[j * 3 + 1];
-          linePos[k++] = pos[j * 3 + 2];
-        }
-      }
-    }
-    lineGeo.setDrawRange(0, k / 3);
-    lineGeo.attributes.position.needsUpdate = true;
-
-    floaters.forEach((s) => {
-      s.position.y += s.userData.speed;
-      s.position.x += Math.sin(t + s.userData.phase) * 0.01;
-      if (s.position.y > 55) s.position.y = -55;
-    });
-
-    network.rotation.y = t * 0.03;
-    network.rotation.x = Math.sin(t * 0.1) * 0.1;
-
-    camera.position.x += (mouseX * 8 - camera.position.x) * 0.03;
-    camera.position.y += (-mouseY * 5 - camera.position.y) * 0.03;
-    camera.lookAt(scene.position);
-
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-  });
-</script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
+  <script src="three-dev.js"></script>
 </body>
 
 </html>
